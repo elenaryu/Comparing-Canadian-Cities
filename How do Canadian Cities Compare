@@ -1,0 +1,80 @@
+How do Canadian Cities Compare to Each Other?
+
+INTRODUCTION
+
+The Problem:
+- What determines how similar Canadian cities are to each other (in terms of what types of businesses they attract)? Is it geographic location or city size?
+- Are large cities across Canada more similar to each other? Or are they more similar to smaller cities within the same province?
+- For example, is Toronto (largest city in Ontario) more similar to Vancouver (largest city in British Columbia) or to Peterborough (smaller city in Ontario).
+
+Background:
+- A successful business owner runs his business in a large Canadian city. He wants to expand to a new location in a new city. 
+- Is his business more likely to succeed in a smaller city closer to the original location?
+- Or is it more likely to succeed in another large city, farther away?
+
+The Audience:
+- Business owners looking to open a new location in a new city.
+
+Caveat:
+- This exercise will examine similarity of cities based on the types of venues that exist within them.
+- Demographics, wealth, and personal business practices of the business owner will not be investigated at this time.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+THE DATA
+
+Dataset and using Foursquare location data:
+- Foursqaure data will need to be used to determine what types of businesses are located within each examined city.
+- Business data from three large cities (Toronto, Vancouver, Montreal) as well as three smaller cities within the same province as each larger city (Peterborough, Victoria, Gatineau) will be used. 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+METHODOLOGY
+
+Exploratory Data:
+- I looked at population sizes of Canadian cities to find the 3 largest cities in the Country as well as a smaller city in each corresponding province.
+- I downloaded business data from Foursqaure API to identify most common business categories in each city.
+
+Techniques:
+- I conducted k-Means analysis to identify similar clusters of cities based on businesses.
+- I mapped the cities.
+- I conducted One-Hot Encoding in order to convert categorical variables into a form that can be used by Machine Learning Algorithms.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+RESULTS
+
+- The 3 top venues in each city were:
+--- Vancouver: Women's Store, Indonesian Restaurant, Pub
+--- Victoria: Women's Store, Liquour Store, Latin American Restuarant
+--- Montreal: American Restaurant, Pizza Place, Pharmacy
+--- Gatineau: American Restaurant, Paper/Office Supplies Store, Outdoor Supply Store
+--- Toronto: Italian Restaurant, French Restaurant, Frozen Yogurt Shop
+--- Peterborough: American Restaurant, Outdoor Supply Store, Office
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+DISCUSSION
+
+- Let's group the above results by small and large cities:
+--- SMALL: (Victoria): Women's Store, Liquor Store, Latin American Restaurant
+           (Gatineau): American Restaurant, Paper/Office Supplies Store, Outdoor Supply Store
+           (Peterborough): American Restaurant, Outdoor Supply Store, Office
+--- LARGE: (Vancouver): Women's Store, Indonesian Restaurant, Pub
+           (Toronto): Italian Restaurant, French Restaurant, Frozen Yogurt Shop
+           (Montreal): American Restaurant, Pizza Place, Pharmacy
+           
+ - Let's further categorize each type of business to a higher-level category:
+ --- SMALL: (Victoria): Store, Store, Restaurant
+           (Gatineau): Restaurant, Store, Supply Store
+           (Peterborough): Restaurant, Store, Office
+--- LARGE: (Vancouver): Store, Restaurant, Pub
+           (Toronto): Restaurant, Restaurant, Restaurant
+           (Montreal): Restaurant, Restaurant, Pharmacy
+           
+ - Although there are no clear trends, it does appear that smaller cities are more likely to have stores as their most common venue, while larger cities are more likely to have restaurants as their most common venue.
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+ CONCLUSION
+ - Although there are no clear trends, it does appear that smaller cities are more likely to have stores as their most common venue, while larger cities are more likely to have restaurants as their most common venue.
